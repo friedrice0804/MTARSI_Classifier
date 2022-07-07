@@ -48,8 +48,7 @@ $ pip install -r requirements.txt
 ![howtouse](./readme_images/howtouse.png)
 
 ### 1. Select option: 
-Apply rotations or No rotations
-This options lets you to decide whether to feed rotated images to
+Options lets you to decide whether to feed rotated images to
 the CNN model. With rotated images, the CNN model could
 output results varies in aircraft model. The majority of the output
 is recognized as actual, and valid output.
