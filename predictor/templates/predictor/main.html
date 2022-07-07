@@ -1,0 +1,169 @@
+{% extends 'HTML_template.html' %} 
+
+{% block title %} 
+Home
+{% endblock title %}
+
+{% block content %}
+<table class = 'center'>
+<!-- try <tr> tag later  -->
+    <td>
+    <!-- Leftmost panel -->
+    <div class = "container"> 
+        <div class="row justify-content-center">
+            <div class = "form-group m-4">
+
+                <h5 class="text-center">Upload a single aircraft image from skyview</h5>
+                <div class="card">
+
+                    <!-- image uploading API -->
+                    <form method="POST" action="" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <!-- option selector -->
+                        <div class="form-group m-4">
+                            <label> + Option (Default: Apply rotations) </label>
+                            <select required name = "rotation_option_set" class = "form-control">
+                            <option value = "none">Select an option..</option> 
+
+                            <!-- Update rotations variables referenced by views.py -->
+                            {% for option in rots %} 
+                            <option value = "{{option.id}}">{{option.name}}</option> 
+                            {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- image selector -->
+                        <div class="form-group m-4">
+                          <label> + Select an image </label>
+                          <input required name = "plane_image" type="file" 
+                           class="from-control-file">
+                        </div>
+                        <table>
+
+                        <tr>
+                        <td>
+                        <!-- upload image button  -->
+                        <button type = 'submit' name = 'uploadImg' 
+                         class = "btn btn-danger btn-sm m-4">Upload image</button>
+                        </td>
+
+                        <td>
+                         <!-- tooltip -->
+                        <a tabindex="0" class="btn btn-danger btn-sm m-4" role="button" data-toggle="popover" data-trigger="focus" 
+                        title="Rotations?" data-content="'Apply rotations' option rotates a given image for a given set of angles.">
+                        Help?</a>
+                        </td>
+                        </tr>
+                    </table>
+
+                    </form>
+
+                    <!-- image preview -->
+                    <div class="text-center">
+                        <img class="rounded" src="{{plane_image.url}}" 
+                         alt="Card image cap", width="300">
+                    </div>
+                    
+                    <!-- option selection notice -->
+                    <div class="card-body">
+                        <p class="card-text"> Rotation option: {{selected_opt.name}} </p>
+                    </div>
+                                        
+                    <!-- identify aircraft -->
+                    <table>
+                        <tr>
+                        <td>
+                            <form method = "POST">
+                            {% csrf_token %}
+                            <div id = 'identifyButtonIdle'>
+                                <button id="stat-btn" name = 'identify' 
+                                 class = "btn btn-warning btn-sm m-4">Identify aircraft</button>
+                            </div>
+                            <div id = 'identifyButtonLoading'>
+                                    <button class="btn btn-warning btn-sm m-4" type="button" disabled>
+                                    &nbsp;Identifying...
+                                    </button>
+                            </div>
+                            </form>
+                        </td>
+                        
+                        <td>
+                            <!-- Spinner loading animation-->
+                            <div id="spinner-div" class="pt-0">
+                                <!-- spinner-grow text-warning -->
+                                <div class="spinner-border text-warning" role="status">
+                                </div>
+                            </div>   
+                        </td>
+                        
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </td>
+
+    <td>
+    <!-- middle Panel -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class = "form-group m-4">
+                <form>
+                    <div class="form-group m-4">
+                        <h4 class="text-center">Aircraft</h4>
+                        <div class="text-center">  
+                            <img class="rounded" src="{{wikiimg}}" 
+                             alt="WikiPlaneImg"  width="300">
+                        </div> 
+                        <p>{{aircraft_id}}</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> 
+    </td>
+
+    <td>
+    <!-- Rightmost Panel -->
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class = "col">
+                 <form>
+                    <div class="form-group m-4">
+                        <h4 class="text-center">Aircraft details</h4>
+                        <!-- Details table -->          
+                        <table class="table table-hover table-fixed">
+
+                            <!-- table header -->
+                            <thead> 
+                            <tr> 
+                                <th>Header</th> 
+                                <th>Details</th> 
+                            </tr> 
+                            </thead> 
+
+                            <!-- table contents -->
+                            <tbody>  
+                            {% if details %}  
+                            {% for k in details %}
+                                <tr> 
+                                <td>{{k.info}}</td>
+                                <td>{{k.detail}}</td>
+                                </tr>
+                                {% endfor %}
+                                {% endif %}
+                            </tbody>
+
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </td>
+
+<!-- try </tr> tag later  -->
+</table>
+{% endblock content %}
