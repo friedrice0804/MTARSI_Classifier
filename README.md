@@ -1,13 +1,12 @@
 # Fighter aircrafts classifer with Django backend
 This is a simple fighter aircrafts classfier using a
-convolutional neural network. The CNN model itself is a 
-pre-trained InceptionV3 architecture, 
-and is used for transfer learning of custom dataset in this project.
+convolutional neural network. The CNN model itself is a pre-trained 
+InceptionV3 architecture, and is used for transfer learning of 
+custom dataset in this project.
 
 The custom dataset is called 
 MTARSI(Multi-type Aircraft of Remote Sensing Images),
 and you can download via following link if necessary.
-
 https://zenodo.org/record/5044950#.YsZY_2DP2Uk
 
 Whilst this is mainly a deep learning project,
