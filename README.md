@@ -48,28 +48,28 @@ $ pip install -r requirements.txt
 ![howtouse](./readme_images/howtouse.png)
 
 ### 1. Select option: 
-Options lets you to decide whether to feed rotated images to
+-Options lets you to decide whether to feed rotated images to
 the CNN model. With rotated images, the CNN model could
 output results that varies in aircraft model. The majority of the output
 will be recognized as actual, and valid output.
 
 ### 2. Select image
-Select your own aircraft satelite imagery.
+-Select your own aircraft satelite imagery.
 
 ### 3. Upload image
-Upload selected image.
+-Upload selected image.
 
 ### 5. Identify image
-Identify uploaded image. This might take a while
+-Identify uploaded image. This might take a while
 as the backend will try to retrieve identified aircraft details
 from Wikipedia. 
 
 ### 7. Aircraft image
-This section will display identified aircraft image
+-This section will display identified aircraft image
 from Wikipedia.
 
 ### 8. Details
-This section will display details of the 
+-This section will display details of the 
 identified aircraft from Wikipedia.
 
 
