@@ -50,8 +50,8 @@ $ pip install -r requirements.txt
 ### 1. Select option: 
 Options lets you to decide whether to feed rotated images to
 the CNN model. With rotated images, the CNN model could
-output results varies in aircraft model. The majority of the output
-is recognized as actual, and valid output.
+output results that varies in aircraft model. The majority of the output
+will be recognized as actual, and valid output.
 
 ### 2. Select image
 Select your own aircraft satelite imagery.
