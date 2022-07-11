@@ -14,7 +14,7 @@ You can also refer to colab notebook files in the project folder if you want to 
 
 ## So what is it exactly?
 It is a CNN model that identifies 42 models of fighter aircrafts that runs on your web browser, 
-and it uses Django backend to handle input and output data from the tensorflow model. 
+and it uses Django backend to handle input and also output data from the tensorflow model. 
 
 * You can only classify a single aircraft at a time.
 * Only top-view images like satelite imagery are valid as input data.
