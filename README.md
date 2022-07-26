@@ -1,5 +1,5 @@
 # Fighter aircrafts classifer using Django backend
-This is a simple fighter aircrafts classfier made with convolutional neural networks. 
+This is a simple aircraft classfier made with convolutional neural networks. 
 The CNN model itself is a pre-trained InceptionV3 architecture, 
 and is commonly used for transfer learning of custom dataset.
 
@@ -13,7 +13,7 @@ the project is intended to remind myself how to design a backend and a simple fr
 You can also refer to colab notebook files in the project folder if you want to know how the training was done.
 
 ## So what is it exactly?
-It is a CNN model that identifies 42 models of fighter aircrafts that runs on your web browser, 
+It is a CNN model that identifies 42 models of aircrafts that runs on your web browser, 
 and it uses Django backend to handle input and also output data from the tensorflow model. 
 
 * You can only classify a single aircraft at a time.
